@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% load static %}
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Big Data, WebScrapping , Reportes de oferta y demanda, cuantificación de mercado">
+  <meta name="keywords" content="Big Data, Consultria, SQL, Qlik Sense, Qlik view Power BI, Saas">
+  <link rel="shortcut icon" href="assets/img/favicon-32x32.png" />
+  <title>Typo</title>
+
+  <!-- PRIMERO LINKS DE BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400&family=Raleway:wght@600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="{%static 'AppCoder/css/style1.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+
+  <header>
+
+
+    <nav class="navbar navbar-expand-md navbar-dark static-top primary">
+      <div class="container-fluid">
+        <a class="navbar-brand Logo" href="#">typo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+
+
+
+            <li class="nav-item"><a class="nav-link active" href="{% url 'Inicio' %}">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{% url 'LeerProfesores' %}">Profesores</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{% url 'List' %}">Cursos </a></li>
+            {% if not request.user.is_authenticated %}
+            <a class="btn warning" href="{% url 'Login' %}">INICIAR</a>
+            {% endif %}
+
+            {% if request.user.is_authenticated %}
+
+
+
+
+            <div class="flex-shrink-0 dropdown">
+              <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="{{url}}" alt="mdo" width="32" height="32" class="rounded-circle">
+
+              </a>
+              <ul class="dropdown-menu text-small shadow"
+                style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0.5px, 34px, 0px);"
+                data-popper-placement="bottom-end">
+                <li><a class="dropdown-item" href="#">{{user.username}}</a></li>
+                <li><a class="dropdown-item" href="{% url 'EditarPerfil' %}">Configurar</a></li>
+
+              </ul>
+            </div>
+
+            {% endif %}
+
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+    </div>
+    </div>
+    </nav>
+  </header>
+
+  <main>
+
+
+
+    <!-- subheader. -->
+
+    <div class="subHeader">
+
+
+    </div>
+
+   
+    <!-- Esto es lo que va a cambiar-->
+
+    {% block contenidoQueCambia %}
+
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+
+
+
+
+
+  <!-- FOOTER -->
+  <footer class=" footer ">
+
+    <div class="row text-center">
+      <div class="col align-items-center">
+
+        <a class="navbar-brand Logo d-flex  align-items-center justify-content-center  " href="#">typo</a>
+
+      </div>
+      <div class="col d-flex  align-items-center justify-content-center">
+
+
+        <h4> Santa Fe - Argentina</h4>
+
+      </div>
+
+      <div class="col d-flex  align-items-center justify-content-center">
+
+        <div class="d-flex text-center align-items-end flex-column">
+          <div class="p-2">Contáctenos</div>
+          <div class="p-2"><a class="text-decoration-none blanco strong" href="tel:0800666300">0800-666-300</a></div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+
+
+    <div class="container text-center">
+      <span>
+
+        <a class=" text-decoration-none  firma strong" href="https://www.linkedin.com/in/bruno-barrera-2634251b/"
+          target="_blank">Diseñado por <strong>Bruno Barrera</strong></a>
+      </span>
+    </div>
+
+
+
+
+
+  </footer>
+
+
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+</body>
+
+</html>

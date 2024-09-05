@@ -1,0 +1,68 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<div class="row featurette primary">
+    <div class="col-md-4   ">
+
+
+      <img class="img-fluid" src="{%static 'AppCoder/assets/img/Qlik-img-5.jpg' %}" alt="Qlik Sense" />
+
+
+    </div>
+    <div class="col-md-8 dark background_PNG">
+
+      <p>
+        <img class="img-fluid w-50" src="{%static 'AppCoder/assets/img/Typo_Logo.png' %}" alt="Qlik Sense" />
+
+
+      </p>
+      <h2 class="m-1 p-4">Somos una red de firmas presente en Argentina comprometidos a brindar servicios de calidad
+        en auditoría,
+        consultoría y outsourcing</h2>
+
+
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+        <div class="text-center">
+            <img height="40px" src="{{url}}" >
+            <h3>Te has logueado correctamente {{user.username}}</h3>
+        </div>
+
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>{{mensaje}}</h1>
+
+
+    <!-- /.Newsletter -->
+    <div class="row featurette warning padding  ">
+        <div class="col-md-6">
+  
+          <img class="img-fluid " src= "{%static 'AppCoder/assets/img/Qlik-logo.png' %}" alt="Qlik Sense" />
+          <h4>Plataforma de Explotación de Datos</h4>
+  
+        </div>
+        <div class="col-md-6">
+  
+  
+          <h5>Suscribite a nuestro newsletter</h5>
+          <p>Notificaciones e informes mensuales.</p>
+          <div class="d-flex w-100 gap-2">
+            <label for="newsletter1" class="visually-hidden">tu@email.com</label>
+            <input id="newsletter1" type="text" class="form-control" placeholder="tu@email.com">
+            <button class="btn btn-primary" type="button">Suscribir</button>
+          </div>
+        </div>
+      </div>
+
+
+{% endblock %}
